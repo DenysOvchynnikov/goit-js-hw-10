@@ -6,6 +6,8 @@ import 'izitoast/dist/css/iziToast.min.css';
 
 const datetimePicker = document.querySelector('#datetime-picker');
 const btnStart = document.querySelector('button[data-start]');
+// Явно дизейблимо кнопку старту одразу при завантаженні скрипта
+btnStart.disabled = true;
 const daysValue = document.querySelector('span[data-days]');
 const hoursValue = document.querySelector('span[data-hours]');
 const minutesValue = document.querySelector('span[data-minutes]');
@@ -27,7 +29,7 @@ const options = {
     if (userSelectedDate <= new Date()) {
       iziToast.error({
         title: 'Error',
-        message: 'Please choose a valid date in the future',
+        message: 'Please choose a date in the future',
         position: 'topRight',
         titleColor: '#fff',
         messageColor: '#fff',
